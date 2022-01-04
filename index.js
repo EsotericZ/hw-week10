@@ -52,10 +52,62 @@ const team = () => {
 
 const engineer = () => {
   console.log('You chose engineer')
-  team();
+  inquirer
+    .prompt([
+      {
+        type: 'input',
+        message: "Engineer's Name",
+        name: 'engineer',
+      },
+      {
+        type: 'input',
+        message: "Engineer's Employee ID",
+        name: 'engineerID',
+      },
+      {
+        type: 'input',
+        message: "Engineer's Email Address",
+        name: 'engineerEmail',
+      },
+      {
+        type: 'input',
+        message: "Engineer's GitHub Username",
+        name: 'engineerGitHub',
+      },
+    ])
+    .then(answers => {
+      console.log(answers);
+      team();
+    });
 };
 
 const intern = () => {
   console.log('You chose intern')
-  team();
+  inquirer
+  .prompt([
+    {
+      type: 'input',
+      message: "Intern's Name",
+      name: 'intern',
+    },
+    {
+      type: 'input',
+      message: "Intern's Employee ID",
+      name: 'internID',
+    },
+    {
+      type: 'input',
+      message: "Intern's Email Address",
+      name: 'internEmail',
+    },
+    {
+      type: 'input',
+      message: "Intern's School",
+      name: 'internSchool',
+    },
+  ])
+  .then(answers => {
+    console.log(answers);
+    team();
+  });
 };
