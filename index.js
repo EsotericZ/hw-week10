@@ -1,5 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+let manager = [];
+let engineers = [];
+let interns = [];
+
 
 inquirer
   .prompt([
@@ -25,7 +29,7 @@ inquirer
     },
   ])
   .then(answers => {
-    console.log(answers);
+    manager = [answers.manager, answers.managerID, answers.managerEmail, answers.managerOffice];
     team();
 });
 
@@ -44,14 +48,13 @@ const team = () => {
       }
     ])
     .then(answers => {
-      console.log(answers)
       answers.addTeam === 'Engineer' ? engineer() : 
-      answers.addTeam === 'Intern' ? intern() : console.log('Finished');
+      answers.addTeam === 'Intern' ? intern() : 
+      fullTeam();
     })
 };
 
 const engineer = () => {
-  console.log('You chose engineer')
   inquirer
     .prompt([
       {
@@ -76,38 +79,45 @@ const engineer = () => {
       },
     ])
     .then(answers => {
-      console.log(answers);
+      let newEng = [answers.engineer, answers.engineerID, answers.engineerEmail, answers.engineerGitHub];
+      engineers.push(newEng);
       team();
     });
 };
 
 const intern = () => {
-  console.log('You chose intern')
   inquirer
-  .prompt([
-    {
-      type: 'input',
-      message: "Intern's Name",
-      name: 'intern',
-    },
-    {
-      type: 'input',
-      message: "Intern's Employee ID",
-      name: 'internID',
-    },
-    {
-      type: 'input',
-      message: "Intern's Email Address",
-      name: 'internEmail',
-    },
-    {
-      type: 'input',
-      message: "Intern's School",
-      name: 'internSchool',
-    },
-  ])
-  .then(answers => {
-    console.log(answers);
-    team();
-  });
+    .prompt([
+      {
+        type: 'input',
+        message: "Intern's Name",
+        name: 'intern',
+      },
+      {
+        type: 'input',
+        message: "Intern's Employee ID",
+        name: 'internID',
+      },
+      {
+        type: 'input',
+        message: "Intern's Email Address",
+        name: 'internEmail',
+      },
+      {
+        type: 'input',
+        message: "Intern's School",
+        name: 'internSchool',
+      },
+    ])
+    .then(answers => {
+      let newInt = [answers.intern, answers.internID, answers.internEmail, answers.internSchool];
+      interns.push(newInt);
+      team();
+    });
 };
+
+const fullTeam = () => {
+  console.log('Manager Info', manager)
+  console.log('Engineers Info', engineers)
+  console.log('Interns Info', interns)
+}
