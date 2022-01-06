@@ -1,9 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-let manager = [];
-let engineers = [];
+// let manager = [];
+// let engineers = [];
 let interns = [];
 
+const Manager = require('./lib/Manager'); 
+const Engineer = require('./lib/Engineer'); 
 
 inquirer
   .prompt([
@@ -29,7 +31,8 @@ inquirer
     },
   ])
   .then(answers => {
-    manager = [answers.manager, answers.managerID, answers.managerEmail, answers.managerOffice];
+    const manager = new Manager(answers.manager, answers.managerID, answers.managerEmail, answers.managerOffice);
+    console.log(manager);
     team();
 });
 
@@ -79,8 +82,9 @@ const engineer = () => {
       },
     ])
     .then(answers => {
-      let newEng = [answers.engineer, answers.engineerID, answers.engineerEmail, answers.engineerGitHub];
-      engineers.push(newEng);
+      // let newEng = [answers.engineer, answers.engineerID, answers.engineerEmail, answers.engineerGitHub];
+      const engineer = new Engineer (name, id, email, github)
+      // engineers.push(newEng);
       team();
     });
 };
@@ -117,7 +121,7 @@ const intern = () => {
 };
 
 const fullTeam = () => {
-  console.log('Manager Info', manager)
-  console.log('Engineers Info', engineers)
-  console.log('Interns Info', interns)
+  // console.log('Manager Info', manager)
+  // console.log('Engineers Info', engineers)
+  // console.log('Interns Info', interns)
 }
