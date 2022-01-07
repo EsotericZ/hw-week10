@@ -120,8 +120,8 @@ const intern = () => {
 };
 
 const fullTeam = () => {
-  let guess = Team(teamAwesome);
-  fs.writeFile("./dist/index.html", guess, (err) => {
+  let htmlFinish = Team(teamAwesome);
+  fs.writeFile("./dist/index.html", htmlFinish, (err) => {
     if (err)
       console.log(err);
     else {
