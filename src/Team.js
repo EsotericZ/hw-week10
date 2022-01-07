@@ -1,9 +1,7 @@
 Team = (teamAwesome) => {
-    console.log('you made it')
     console.log(teamAwesome)
-
     const man1 = members(teamAwesome);
-    const wtf = 
+    const htmlFull = 
         `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,38 +23,84 @@ Team = (teamAwesome) => {
     <div class="container">
         <div class="row">
             ${man1}
-            <div class="col-4">
-                <h1>Name</h1>
-                <h2>Job</h2>
-                <p class="ID">ID</p>
-                <p class= "email">Email: <a href="mailto:"</p>
-                <p class="github">Github: <a href="http://github.com/"</p>
-            </div>
-            <div class="col-4">
-                <h1>Name</h1>
-                <h2>Job</h2>
-                <p class="ID">ID</p>
-                <p class= "email">Email: <a href="mailto:"</p>
-                <p class="github">Github: <a href="http://github.com/"</p>
-            </div>
         </div>
     </div>
 </body>
 </html>
         `;
-    return wtf;
+    return htmlFull;
 }
 
+let roll, name, id, email, office, github, school, job;
+
 members = (teamAwesome) => {
-    return `
-        <div class="col-4">
-            <h1>Manager</h1>
-            <h2>Test</h2>
-            <p class="ID">ID</p>
-            <p class= "email">Email: <a href="mailto:"</p>
-            <p class="github">Github: <a href="http://github.com/"</p>
-        </div>
-`;
+    let htmlPart = '';
+
+    teamAwesome.forEach(n => {
+        roll = n.roll;
+        name = n.name;
+        id = n.id;
+        email = n.email
+        if (n.roll === 'Manager') {
+            office = n.officeNumber;
+            icon = "fas fa-mug-hut";
+            job = `          
+            <div class="col-12 col-4 col-lg-3 mx-md-4 my-4 py-1">
+                <div class="card">
+                    <div class="card-header">
+                        ${name}<br/>
+                        <i class=${icon}></i> ${roll}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">ID: ${id}</p>
+                        <p class="card-text">Email: <a href="mailto:${email}">${email}</a></p>
+                        <p class="card-text">Office:${office}</p>
+                    </div>
+                </div>
+            </div>
+            `;
+            htmlPart += job;
+        } else if (n.roll === 'Engineer') {
+            github = n.github;
+            icon = "fas fa-glasses";
+            job = `          
+            <div class="col-12 col-4 col-lg-3 mx-md-4 my-4 py-1">
+                <div class="card">
+                    <div class="card-header">
+                        ${name}<br/>
+                        <i class=${icon}></i> ${roll}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">ID: ${id}</p>
+                        <p class="card-text">Email: <a href="mailto:${email}">${email}</a></p>
+                        <p class="card-text">Github: <a href="http://github.com/${github}" target="_blank">${github}</p>
+                    </div>
+                </div>
+            </div>
+            `;
+            htmlPart += job;
+        } else {
+            school = n.school;
+            icon = "fas fa-user-graduate";
+            job = `          
+            <div class="col-12 col-4 col-lg-3 mx-md-4 my-4 py-1">
+                <div class="card">
+                    <div class="card-header">
+                        ${name}<br/>
+                        <i class=${icon}></i> ${roll}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">ID: ${id}</p>
+                        <p class="card-text">Email: <a href="mailto:${email}">${email}</a></p>
+                        <p class="card-text">School:${intern.school}</p>
+                    </div>
+                </div>
+            </div>
+            `;
+            htmlPart += job;
+        }
+    });
+    return ;
 }
 
 module.exports = Team;

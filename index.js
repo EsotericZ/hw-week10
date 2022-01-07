@@ -31,7 +31,7 @@ inquirer
     },
   ])
   .then(answers => {
-    const manager = new Manager(answers.manager, answers.managerID, answers.managerEmail, answers.managerOffice);
+    const manager = new Manager('Manager', answers.manager, answers.managerID, answers.managerEmail, answers.managerOffice);
     teamAwesome.push(manager);
     team();
 });
@@ -82,7 +82,7 @@ const engineer = () => {
       },
     ])
     .then(answers => {
-      const engineer = new Engineer(answers.engineer, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
+      const engineer = new Engineer('Engineer', answers.engineer, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
       teamAwesome.push(engineer);
       team();
     });
@@ -113,7 +113,7 @@ const intern = () => {
       },
     ])
     .then(answers => {
-      const intern = new Intern(answers.intern, answers.internID, answers.internEmail, answers.internSchool);
+      const intern = new Intern('Intern', answers.intern, answers.internID, answers.internEmail, answers.internSchool);
       teamAwesome.push(intern);
       team();
     });
@@ -125,10 +125,7 @@ const fullTeam = () => {
     if (err)
       console.log(err);
     else {
-      console.log("File written successfully\n");
-      console.log("The written has the following contents:");
-      // console.log(fs.readFileSync("books.txt", "utf8"));
+      console.log("File written successfully");
     }
   });
-  console.log('try', guess);
 }
