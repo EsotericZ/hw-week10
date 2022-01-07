@@ -121,5 +121,14 @@ const intern = () => {
 
 const fullTeam = () => {
   let guess = Team(teamAwesome);
+  fs.writeFile("./dist/index.html", guess, (err) => {
+    if (err)
+      console.log(err);
+    else {
+      console.log("File written successfully\n");
+      console.log("The written has the following contents:");
+      // console.log(fs.readFileSync("books.txt", "utf8"));
+    }
+  });
   console.log('try', guess);
 }
