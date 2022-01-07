@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 let teamAwesome = [];
 
+const Team = require('./src/Team');
 const Manager = require('./lib/Manager'); 
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -119,7 +120,6 @@ const intern = () => {
 };
 
 const fullTeam = () => {
-  console.log(teamAwesome)
-  // console.log('Engineers Info', engineers)
-  // console.log('Interns Info', interns)
+  let guess = Team(teamAwesome);
+  console.log('try', guess);
 }
