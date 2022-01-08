@@ -43,12 +43,12 @@ members = (teamAwesome) => {
         email = n.email
         if (n.role === 'Manager') {
             office = n.officeNumber;
-            icon = "fas fa-mug-hut";
+            icon = "fas fa-mug-hot";
             job = `<div class="col-12 col-4 col-lg-3 mx-md-4 my-4 py-1">
                 <div class="card">
                     <div class="card-header">
                         ${name}<br/>
-                        <i class=${icon}></i> ${role}
+                        <i class="${icon}"></i> ${role}
                     </div>
                     <div class="card-body">
                         <p class="card-text">ID: ${id}</p>
@@ -66,7 +66,7 @@ members = (teamAwesome) => {
                 <div class="card">
                     <div class="card-header">
                         ${name}<br/>
-                        <i class=${icon}></i> ${role}
+                        <i class="${icon}"></i> ${role}
                     </div>
                     <div class="card-body">
                         <p class="card-text">ID: ${id}</p>
@@ -84,7 +84,7 @@ members = (teamAwesome) => {
                 <div class="card">
                     <div class="card-header">
                         ${name}<br/>
-                        <i class=${icon}></i> ${role}
+                        <i class="${icon}"></i> ${role}
                     </div>
                     <div class="card-body">
                         <p class="card-text">ID: ${id}</p>
