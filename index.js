@@ -3,6 +3,7 @@ const fs = require('fs');
 let teamAwesome = [];
 
 const Team = require('./src/Team');
+const Format = require('./src/Format');
 const Manager = require('./lib/Manager'); 
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -125,7 +126,16 @@ const fullTeam = () => {
     if (err)
       console.log(err);
     else {
-      console.log("File written successfully");
+      console.log("index.html file written successfully");
+    }
+  });
+
+  let cssFinish = Format();
+  fs.writeFile("./dist/style.css", cssFinish, (err) => {
+    if (err)
+      console.log(err);
+    else {
+      console.log("style.css file written successfully");
     }
   });
 }
