@@ -18,7 +18,7 @@ This code requires installation packages of inquirer and jest
 Used to create and contact software engineering team
 
 Video Example  
-[![Watch](https://img.freepik.com/free-vector/video-player-interface-play-button-play-video_177006-355.jpg?size=626&ext=jpg)](https://watch.screencastify.com/v/rjrREFmmBO8Hrzw4qOV0)
+[![Watch](https://img.freepik.com/free-vector/video-player-interface-play-button-play-video_177006-355.jpg?size=626&ext=jpg)](https://watch.screencastify.com/v/MSRhzrJCqlGbFDTl6NJm)
 
 Screenshots  
 ![Alt text](/images/terminal.png?raw=true "Terminal View")
