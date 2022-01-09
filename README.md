@@ -20,9 +20,9 @@ Video Example
 [![Watch](https://img.freepik.com/free-vector/video-player-interface-play-button-play-video_177006-355.jpg?size=626&ext=jpg)](https://watch.screencastify.com/v/rjrREFmmBO8Hrzw4qOV0)
 
 Screenshots  
-- Final Terminal View
-![Alt text](/images/terminal.png?raw=true "Terminal View")
-- Website after application ran
+- Final Terminal View  
+![Alt text](/images/terminal.png?raw=true "Terminal View")  
+- Website after application ran  
 ![Alt text](/images/webpage.png?raw=true "Final View")
       
 ## Contributing 
