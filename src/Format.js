@@ -14,6 +14,10 @@ Format = () => {
 .card {
     border: 1px solid black;
     text-align: center;
+}
+
+.card-header {
+    background-color: rgb(201, 153, 245);
 }`;
     return cssFull;
 }
