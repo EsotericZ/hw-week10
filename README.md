@@ -8,7 +8,7 @@ Using Node.js command line application, supply information about employees (mana
 - [Usage](#Usage)
 - [Contributing](#Contributing)
 - [Tests](#Tests)
-- [Questions](#Questions)
+- [Contact](#Contact)
 
 ## Installation
 This code requires installation packages of inquirer and jest
@@ -31,6 +31,6 @@ Kirtley Adams contributed on this project
 ## Tests
 Install jest and run using "npm run test"
 
-## Questions
+## Contact
 GitHub Profile: [EsotericZ](https://www.github.com/EsotericZ)  
 Additional questions? [Contact Me](mailto:cjsand03@gmail.com)
